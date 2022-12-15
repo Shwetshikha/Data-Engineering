@@ -219,3 +219,109 @@ myfamily = {
 }
 print(myfamily)
 print(type(myfamily))
+
+
+# Python Functions
+# A block of code which only runs when it is called
+# Parameters are the data which are passed into a Functions
+# A function can return data as a result
+
+# ARGUMENTS
+# Information can be passed into a function as agruments
+# Arguments are specified after function name, inside the parentheses.
+# we can add many agruments by separating it with comma
+
+def my_function(fname):
+    print(fname + " Reference")
+
+my_function("Shwet")
+my_function("Shikha")
+my_function("Manvi")
+def my_function(fname, lname):
+    print(fname + " " + lname)
+
+my_function("shwet", "Shikha")
+
+# Arbitary Agruments
+def family(*kids):
+    print("The youngest child is " + kids[2])
+    print("The Eldest chlid is " + kids[0])
+    print("The Middle child is " + kids[1])
+family("Shwet", "Shikha", "Mani")
+
+# Keyword Arguments
+def family(child1, child2, child3):
+    print("The Youngest child is " + child3)
+
+family(child1 = "Shikha", child2 = "Shwet", child3 = "Manu")
+
+# Arbitrary Keyword Arguments
+def name(**name):
+    print("His last name is " + name["lname"])
+
+name(fname = "Shwet", lname= "Shikha")
+
+# Passing a List as an Argument
+# Can send any type of data as argument to a function -- buut it will be treated as same data type as inside the function
+# Change type of built -n function to know the data type of food in function
+def my_function(food):
+    for x,y in food.items():
+        print(y)
+
+fruits = {"apple", "banana", 3}
+dict = {
+    "brand": ("Ford"),
+    "model": {"Mustang"},
+    "year": 1964,
+    "colors": ["red", "White", "blue"]
+}
+# my_function(fruits)
+my_function(dict)
+print(type(fruits))
+print(type(dict))
+
+# Return Values
+def my_function(x, y):
+    return (10 * x), (7 * y)
+
+print(my_function(3, 7))
+
+# The pass Statement
+# function defination cannot be empty but if for some reason the function has no content, put "pass" statement to avoid getting error
+
+def my_function():
+    pass
+
+# recursion
+# Function calling itself-- recursion
+# We can loop through the data to reach a result
+# # EXAMPLE
+# tri_recursion() is a function that has been called itself
+# we use the 'k' variable as the data, which decrements(-1) every time we recurse
+
+def tri_recursion(k):
+    if(k > 0):
+        result = k + tri_recursion(k -1)
+        print(result)
+    else:
+        result = 0
+    return result
+
+print("\n\nRecursion Example Results")
+tri_recursion(6)
+# Logic-- result = "No of recursion i.e the value of input k" + "addition of previous recursion(k-1)"
+
+# lambda Function
+x = lambda a, b, c: a + b + c
+print(x(5, 6, 2))
+
+# Why use Lambda Function
+# The power of lambda is better shown when you use them as an anonymous function inside another function
+
+def myfun(n):
+    return lambda a : a * n
+mydoubler = myfun(2)
+
+print(mydoubler(11))
+# Python Arrays
+# Python does not have built-in support for Arrays, but Python Lists can be used instead
