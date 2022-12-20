@@ -124,4 +124,40 @@ s2 = "PyNative"
 message = string_balance(s1, s2)
 print("s1 and s2 are balanced: ", message)
 
+# Calculate income tax for the given income by adhering to the below rules
+taxable_income = int(input("Enter taxable income to calculate the income tax"))
+print(type(taxable_income))
+if taxable_income <= 10000:
+    income_tax = 10000 * 0
+elif taxable_income <= 20000:
+    x = (taxable_income - 10000)
+    income_tax = (x * 10) / 100
+else:
+    income_tax = 0
+    income_tax = 10000 * 10 / 100
+    income_tax = income_tax + (taxable_income - 20000) * 20 / 100
+print("Total tax payable is", income_tax)
 
+# Print multiplication table from 1 to 10
+table = int(input("The number of table you want to multiply"))
+table = table + 1
+for i in range(1, table):
+    for j in range(1, table):
+        print(i * j, end=" ")
+    print("")
+
+star = int(input("The number of star rows you want to print"))
+star = star + 1
+for i in range(1, star):
+
+    for j in range(1, i + 1):
+        print("*", end=" ")
+    print("")
+
+# Print a rectangle pattern with 5 rows and 3 column of stars
+rows = int(input("The number of rows you want to print"))
+column = int(input("The number of column you want to print"))
+for i in range(1, rows + 1):
+    for j in range(1, column + 1):
+        print("*", end=" ")
+    print("")
