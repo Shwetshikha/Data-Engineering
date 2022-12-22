@@ -9,8 +9,8 @@ def greet(name):
     print("Message for greet function: " + message)
 
 def send_email(name):
-    # global message
-    # message = "b"
+    global message
+    message = "b"
     print("Message for send_email function: " + message)
 
 

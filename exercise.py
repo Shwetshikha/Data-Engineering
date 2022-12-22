@@ -147,10 +147,10 @@ for i in range(1, table):
     print("")
 
 star = int(input("The number of star rows you want to print"))
-star = star + 1
-for i in range(1, star):
 
-    for j in range(1, i + 1):
+for i in range(star):
+
+    for j in range(i + 1):
         print("*", end=" ")
     print("")
 
