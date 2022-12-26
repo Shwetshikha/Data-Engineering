@@ -161,3 +161,11 @@ for i in range(1, rows + 1):
     for j in range(1, column + 1):
         print("*", end=" ")
     print("")
+
+# Print downward Half-Pyramid Pattern with star
+star = int(input("The number of rows you want to print"))
+columnd = int(input("The number of column you want to print"))
+for i in range(star):
+    for j in range(columnd):
+        print("*", end=" ")
+    print("")
