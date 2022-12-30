@@ -18,6 +18,7 @@ class Student:
     @classmethod
     def change_School(cls, name):
         cls.school_name = name
+
     @staticmethod
     def find_notes(subject_name):
         return ['chapter 1', 'chapter 2', 'chapter 3']
