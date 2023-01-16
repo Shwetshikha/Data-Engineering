@@ -243,11 +243,252 @@ echo "Hello World"  # This is also a comment
 #   # xterm & 
 # done
 
-# READ FILE CONTENT IN BASH
+# # READ FILE CONTENT IN BASH
 
-while read p
-do 
-  echo $p
-done < test 
+# cat hello.sh | while read p
+# do 
+#   echo $p
+# done
 
-# 
+# # IFS -- Internal Field Separator
+# while IFS= read -r line
+# do 
+#   echo $line
+# done < /etc/host.conf
+
+# # UNTIL LOOP
+# n=1
+# until [ $n -gt 10 ]
+# do
+#   echo $n
+#   n=$(( n+1 ))
+# done
+# # Other way of using until  
+# until (( $n > 10 ))
+# do 
+#   echo $n
+#   (( ++n ))
+# done
+
+# # FOR LOOP 
+# # echo ${BASH_VERSION}
+# for i in {0..10..2}  # range in script{start..end..increment}
+# do 
+#   echo $i
+# done 
+
+# for (( i=0; i<5; i++ ))
+# do 
+#   echo $i 
+# done
+
+# for command in ls pwd date
+# do
+#   echo "-----------$command------------"
+#   echo $command
+# done
+
+# for item in *
+# do
+#   if [ -d $item ]
+#     then echo "This is a directory named $item "
+#   else echo "This is not a directory"
+#   fi
+# done
+
+# for item in *
+# do
+#   if [ -f $item ]
+#     then echo "This is file named $item "
+#   else echo "This is not a file"
+#   fi
+# done
+
+# # SELECT LOOP
+# syntax---
+# select varName in list
+# do 
+
+# done
+
+# select name in Shwet Manvi Ayush Amit 
+# do 
+#   echo "$name selected"
+# done 
+
+# select name in Shwet Manvi Ayush Amit 
+# do 
+#   case $name in 
+#   Shwet)
+#     echo Shwet selected
+#     ;;
+#   Manvi)
+#     echo Manvi selected
+#     ;;
+#   Ayush)
+#     echo Ayush selected
+#     ;;
+#   Amit)
+#     echo Amit selected
+#     ;;
+#   *)
+#     echo "Error please provide the no. between 1-4"
+#   esac 
+# done
+
+# # Break and continue 
+
+# for (( i=1 ; i<=10 ; i++ ))
+# do 
+#   if [ $i -eq  3 -o $i -eq 6 ]
+#   then 
+#     break
+#   fi 
+#   echo "$i"
+# done 
+
+# for (( i=1 ; i<=10 ; i++ ))
+# do 
+#   if [ $i -eq  3 -o $i -eq 6 ]
+#   then 
+#     continue 
+#   fi 
+#   echo "$i"
+# done 
+
+# # FUNCTIONS 
+# # syntax 
+# # function name(){
+# #   commands
+# # }
+
+# function Hello() {
+#   echo "Hello, entered the hello function"
+# }
+
+# quit() {
+#   echo "Quit function called"
+#   exit
+# }
+
+# # Calling the function -- sequence of calling function matters 
+# # quit
+# Hello
+# # quit
+
+# echo "function"
+
+# function print() {
+#   echo $1 $2 $3
+# }
+
+# quit() {
+#   exit
+# }
+
+# # calling function as argument
+# print Hello World first
+# print World
+# print Again
+
+# echo "Function"
+# quit
+
+# LOCAL VARIABLES 
+
+# function print(){
+#   name=$1
+#   echo "The name is $name "
+# }
+# name="Shwet"
+# print Manvi
+# print Shikha
+# echo "Print function called"
+
+# function print(){
+#   local name=$1
+#   echo "The name is $name "
+# }
+
+# name="Shwet" # Global variable
+
+# echo "The name is $name : Before"
+
+# print Manvi
+
+# echo "The name is $name : After"
+
+# # FUNCTION EXAMPLE
+
+# usage() {
+#   echo "You need to provide an argument : "
+#   echo "usage : $0 file_name"
+# }
+
+# is_file_exist() {
+#  local file="$1"
+#  [[ -f "$file" ]] && return 0 || return 1
+# } 
+
+# [[ $# -eq 0 ]] && usage
+
+# if ( is_file_exist "$1")
+# then 
+#   echo "File Found"
+# else 
+#   echo "File not found"
+# fi 
+
+# # READONLY COMMAND
+# var=31
+# readonly var 
+# var=50
+# echo "var => $var"
+
+# hello(){
+#   echo "Hello World"
+# }
+
+# readonly -f hello
+# hello(){
+#   echo "Hello World Again"
+# }
+# readonly 
+# readonly -f hello
+# readonly -f 
+
+# # SIGNALS AND TRAPS
+
+# echo "pid is $$"
+# while (( COUNT < 10 ))
+# do 
+#   sleep 5
+#   (( COUNT ++ ))
+#   echo $COUNT 
+# done
+# exit 0
+# # Kill signal by using "kill -9 pid"
+
+# man 7 -- to read more about the signals
+# TRAP 
+# trap "echo Exit signal is detected" SIGINT
+# echo "pid is $$"
+# while (( COUNT < 10 ))
+# do
+#   sleep 10
+#   (( COUNT ++ ))
+#   echo $COUNT 
+# done
+# exit 0 
+
+# trap "echo Exit command is detected" 0
+
+# echo "Hello world"
+# exit 1
+# exit 0
+
+# # Debugging a BASH Script
+# set -x 
+# set +x
+
+# using function through another script
